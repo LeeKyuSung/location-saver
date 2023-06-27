@@ -23,7 +23,7 @@ public class LocationService {
     }
 
     public List<LocationResDto> findAll() {
-        return locationRepository.findAll().stream()
+        return locationRepository.findByOrderBySeqNoDesc().stream()
                 .map(LocationResDto::new)
                 .toList();
     }
