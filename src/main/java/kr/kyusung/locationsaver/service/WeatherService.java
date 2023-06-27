@@ -20,10 +20,10 @@ public class WeatherService {
 
     private final RestTemplate restTemplate;
 
-    public String getCityName(String lat, String lon) {
+    public String getCityName(String lat, String lng) {
         UriComponents urlBuilder = UriComponentsBuilder.fromHttpUrl(WEATHER_BASE_URL)
                 .queryParam("lat", lat)
-                .queryParam("lon", lon)
+                .queryParam("lon", lng)
                 .queryParam("appid", weatherApiKey)
                 .queryParam("units", "metric")
                 .build(false);

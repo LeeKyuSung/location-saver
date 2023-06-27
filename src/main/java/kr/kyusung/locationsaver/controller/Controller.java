@@ -26,8 +26,8 @@ public class Controller {
 
     @GetMapping("/location")
     @ResponseBody
-    public ResponseEntity<String> location(String lat, String lon) {
-        log.info("lat: {}, lon: {}", lat, lon);
-        return ResponseEntity.ok(weatherService.getCityName(lat, lon));
+    public ResponseEntity<String> location(String lat, String lng) {
+        log.info("lat: {}, lng: {}", lat, lng);
+        return ResponseEntity.ok(weatherService.getCityName(lat, lng));
     }
 }
