@@ -4,16 +4,15 @@ import kr.kyusung.locationsaver.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Slf4j
-@Controller
+@org.springframework.stereotype.Controller
 @RequiredArgsConstructor
-public class LocationController {
+public class Controller {
     private final WeatherService weatherService;
 
     @GetMapping("/")
