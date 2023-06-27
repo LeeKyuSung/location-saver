@@ -17,4 +17,4 @@ jobs:
       - run: ./deploy.sh
         env:
           RUNNER_TRACKING_ID: ""
-          OPENWEATHERMAP_API_KEY: ${{secrets.OPENWEATHERMAP_API_KEY}
+          OPENWEATHERMAP_API_KEY: ${{secrets.OPENWEATHERMAP_API_KEY}}
