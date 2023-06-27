@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -24,9 +25,9 @@ public class Controller {
         return "index";
     }
 
-    @GetMapping("/location")
+    @GetMapping("/city")
     @ResponseBody
-    public ResponseEntity<String> location(String lat, String lng) {
+    public ResponseEntity<String> city(String lat, String lng) {
         log.info("lat: {}, lng: {}", lat, lng);
         return ResponseEntity.ok(weatherService.getCityName(lat, lng));
     }

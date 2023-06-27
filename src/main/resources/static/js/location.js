@@ -6,7 +6,7 @@ function onGeoSuccess(position) {
     const lng = position.coords.longitude;
     locationText.innerText = `위도: ${lat}, 경도: ${lng}`;
 
-    fetch(`/location?lat=${lat}&lng=${lng}`)
+    fetch(`/city?lat=${lat}&lng=${lng}`)
         .then((response) => response.text())
         .then((city) => {
             console.log(city);
