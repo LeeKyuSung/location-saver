@@ -4,6 +4,8 @@ import kr.kyusung.locationsaver.entity.Location;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @Getter
 @ToString
 public class LocationResDto {
@@ -12,6 +14,7 @@ public class LocationResDto {
     String lat;
     String lng;
     String cityName;
+    LocalDateTime createdDate;
 
     public LocationResDto(Location location) {
         this.seqNo = location.getSeqNo();
@@ -19,5 +22,6 @@ public class LocationResDto {
         this.lat = location.getLatitude();
         this.lng = location.getLongitude();
         this.cityName = location.getCityName();
+        this.createdDate = location.getCreatedDate();
     }
 }
