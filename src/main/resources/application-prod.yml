@@ -1,0 +1,44 @@
+server:
+  port: 7400
+  servlet:
+    context-path: /location
+  error:
+    include-exception: false
+    include-message: always
+    include-stacktrace: never
+    whitelabel:
+      enabled: true
+    path: /error
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:/home/leekyusung/location-saver/h2-db
+    username: locationsaver
+    password: locationsaver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      format_sql: false
+  h2:
+    console:
+      enabled: true # TODO false로 바꾸기
+      path: /h2-console
+      settings:
+        web-allow-others: true  # TODO false로 바꾸기
+
+springdoc:
+  swagger-ui:
+    path: /api-docs.html
+    enabled: true # TODO false로 바꾸기
+  api-docs:
+    enabled: true # TODO false로 바꾸기
+
+logging:
+  file:
+    path: /home/leekyusung/location-saver/logs
+  level:
+    root: info
+    org.springframework.web: debug
+    org.hibernate.SQL: debug
