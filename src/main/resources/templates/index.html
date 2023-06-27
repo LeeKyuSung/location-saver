@@ -17,8 +17,9 @@
 <script th:inline="javascript">
     /*<![CDATA[*/
     const name = [[${name}]];
+    const contextPath = [[@{/}]];
     /*]]>*/
 </script>
-<script src="/js/location.js"></script>
+<script th:src="@{/js/location.js}"></script>
 </body>
 </html>

@@ -5,13 +5,15 @@ const locationList = document.querySelector(".location-list");
 
 let lat, lng;
 let cityName;
+console.log(contextPath);
+console.log("1111");
 
 function onGeoSuccess(position) {
   lat = position.coords.latitude;
   lng = position.coords.longitude;
   locationText.innerText = `위도: ${lat}, 경도: ${lng}`;
 
-  fetch(`/city?lat=${lat}&lng=${lng}`)
+  fetch(`${contextPath}city?lat=${lat}&lng=${lng}`)
     .then((response) => response.text())
     .then((city) => {
       console.log(city);
@@ -31,7 +33,7 @@ function onSaveButtonClick() {
     return;
   }
 
-  fetch("/location", {
+  fetch(`${contextPath}location`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -52,7 +54,7 @@ function onSaveButtonClick() {
 }
 
 function refreshLocationList() {
-  fetch("/location")
+  fetch(`${contextPath}location`)
     .then((response) => response.json())
     .then((locations) => {
       console.log(locations);
